@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/yonatan12121/remember-and-missed-backend#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "firebase": "^9.22.2"
   }
 }
