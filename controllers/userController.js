@@ -16,6 +16,6 @@ function storeStringInFirebase(string) {
 }
 
 // Usage example
-const myString = 'Hello Firebase!';
+const myString = 'Hello,     Firebase!';
 
 storeStringInFirebase(myString);
