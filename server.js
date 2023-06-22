@@ -1,17 +1,18 @@
 const express = require('express');
-require('dotenv').config();
 const app = express();
-const port = process.env.PORT || 3000;
+const usersRoutes = require('./routes/userRoutes');
+const cors = require('cors');
 
-const controller = require('./controllers/userController');
+// Enable CORS
+app.use(cors());
+// Middleware
+app.use(express.json());
 
-// Define your routes and middleware here
+// Routes
+app.use('/', usersRoutes);
 
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
-});
-app.post('/storeString', (req, res) => {
-    const myString = 'Hello, Firebase!';
-    controller.storeStringInFirebase(myString);
-    res.send('String stored in Firebase!');
+// Start the server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
